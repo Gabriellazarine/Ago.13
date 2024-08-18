@@ -18,4 +18,4 @@ function atualizarFlashcard(id, novaPergunta, novaResposta, novoBaralho) {
   }
 }
 
-module.exports = atualizarFlashcard;
+module.exports = {atualizarFlashcard};
