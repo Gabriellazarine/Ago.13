@@ -6,6 +6,8 @@ const {listarFlashcard} = require('./Flashcard/listarFlashcard');
 const {adicionarFlashcard} = require('./Flashcard/adicionarFlashcard');
 const {deletarFlashcard} = require('./Flashcard/deletarFlashcards');
 const {atualizarFlashcard} = require('./Flashcard/atualizarFlashcard');
+const {buscarFlashcardsPorPergunta} = require('./Flashcard/buscarFlashcardsPorPergunta');
+
 
 const prompt = require('prompt-sync')();
 
