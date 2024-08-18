@@ -1,4 +1,4 @@
-const data = require('./data');
+const data = require('../data');
 
 function buscarFlashcardsPorPergunta(pergunta) {
   const { flashcards } = data;
