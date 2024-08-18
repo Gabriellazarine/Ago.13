@@ -7,7 +7,8 @@ const {adicionarFlashcard} = require('./Flashcard/adicionarFlashcard');
 const {deletarFlashcard} = require('./Flashcard/deletarFlashcards');
 const {atualizarFlashcard} = require('./Flashcard/atualizarFlashcard');
 const {buscarFlashcardsPorPergunta} = require('./Flashcard/buscarFlashcardsPorPergunta');
-
+const {buscarFlashcardsPorBaralho} = require('./Flashcard/buscarFlashcardsPorBaralho');
+const {findFlashcardIndexById} = require('./findFlashcardIndexById');
 
 const prompt = require('prompt-sync')();
 
@@ -112,6 +113,7 @@ switch(opcao) {
         id = prompt('Insira o número a remover: ');
         deletarFlashcard(id);
         exibirMenuFlashcards();
+        break;
     case '4':
         listarFlashcards();
         const idAtualizarFlashcards = parseInt(prompt('Insira o número do id a ser atualizado: '));
@@ -119,10 +121,18 @@ switch(opcao) {
         const novaResposta = prompt('Insira a nova resposta: ');
         const novoBaralho = prompt('Insira o novo Baralho: ');
         atualizarFlashcards(idAtualizarFlashcards, {pergunta:novaPergunta, resposta:novaResposta, baralho:novoBaralho});
-
-
-        atualizarBaralho(idAtualizarBaralho, {nome:novoNomeBaralho});
         exibirMenuFlashcards();
+        break;
+    case '5':
+        const nomeBaralho = prompt('Digite o nome do baralho: ');
+        buscarFlashcardsPorBaralho(nomeBaralho);
+        exibirMenuFlashcards();
+        break;
+    case '6':
+       const perguntaBusca = prompt('Digite a pergunta a ser buscada: ');
+       buscarFlashcardsPorPergunta(perguntaBusca);
+       exibirMenuFlashcards();
+       break;
     case '7':
         exibirMenu();
         break;
